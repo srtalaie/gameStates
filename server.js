@@ -14,6 +14,9 @@ app.use(express.static("public"));
 //Sync with db
 let db = require('./models');
 
+//Routes
+require("./routes/api-routes.js")(app);
+
 //Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
