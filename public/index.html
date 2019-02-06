@@ -54,6 +54,7 @@
                         labels: data.map(game => game.title),
                         datasets: [{
                             label: 'Number of Monthly Active Players',
+                            //Map through data to get each game's monthly player base
                             data: data.map(game => game.player_base),
                             backgroundColor: [
                                 'rgba(255, 99, 132, 0.2)',
@@ -76,6 +77,7 @@
                     },
                     options: {
                         scales: {
+                            //Have it so x-axis is the monthly players and the y is each game
                             xAxes: [{
                                 ticks: {
                                     beginAtZero:true
