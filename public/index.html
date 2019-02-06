@@ -43,12 +43,14 @@
                 method: 'GET',
                 url: '/api/games'
             }).then(function(data){
-
+                
                 let chart = $('#gamesChart');
 
+                //Create a new chart
                 let gamesChart = new Chart(chart, {
                     type: 'horizontalBar',
                     data: {
+                        //Map through data to get each game's title
                         labels: data.map(game => game.title),
                         datasets: [{
                             label: 'Number of Monthly Active Players',
