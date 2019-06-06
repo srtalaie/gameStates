@@ -1,4 +1,4 @@
-INSERT INTO games (title, player_base) 
+INSERT INTO Games (title, player_base) 
 VALUES
 ('Star Wars Battlefront 2', 200000),
 ('League of Legends', 1500000),
