@@ -10,4 +10,8 @@ module.exports =
             res.sendFile(path.join(__dirname, "../public/about.html"));
         });
 
+        app.get("/style", function(req, res) {
+            res.sendFile(path.join(__dirname, "../public/css/style.css"))
+        });
+
 };

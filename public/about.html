@@ -7,7 +7,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/style">
 </head>
 <body>
-    <h1>About</h1>
+    <nav>
+        <div class="nav-wrapper orange accent-3 center-align">
+            <a href="/" class="brand-logo" >GameStates</a>
+            <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+            <li><a href="/">Home</a></li>
+            </ul>
+        </div>
+    </nav>
+    <!-- Mobile menu -->
+    <ul class="sidenav" id="mobile">
+        <li><a href="/">Home</a></li>
+    </ul>
+    <div class="container">
+        <div class="col s12 center-align flow-text">
+            <h4>What is GameStates?</h4>
+            <p>A simple site that helps you view how many active players are in your games. Let's you see whether your favorite game is alive and thriving or a dead wasteland. </p>
+            <h4>How it works?</h4>
+            <p>We pull the current number of monthly players using API calls to their respective games' databases giving you real time info on how many people are playing that game.</p>
+            <h4>What this will tell you?</h4>
+            <p>This should tell you whether you should buy/re-install a multiplayer game based on whether there is a healthy amount of current players.</p>
+        </div>
+    </div>
+    <footer class="footer orange accent-3">
+        <p id='date'></p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js" integrity="sha256-o8aByMEvaNTcBsw94EfRLbBrJBI+c3mjna/j4LrfyJ8=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            //Get date for copyright at the bottom
+            date = new Date();
+
+            $('#date').html(`&copy;
+                ${date.getFullYear()}
+            `)
+
+            $('.sidenav').sidenav();
+
+        });
+    </script>
 </body>
+

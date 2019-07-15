@@ -7,35 +7,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/style">
 </head>
 <body>
     <nav>
         <div class="nav-wrapper orange accent-3">
-            <a href="#!" class="brand-logo">GameStates</a>
+            <a href="/" class="brand-logo">GameStates</a>
             <a href="#" data-target="mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
             <ul class="right hide-on-med-and-down">
             <li><a href="/about">About</a></li>
             </ul>
         </div>
     </nav>
-
+    <!-- Mobile menu -->
     <ul class="sidenav" id="mobile">
-        <li><a href="/about">About Us</a></li>
+        <li><a href="/about">About</a></li>
     </ul>
+
     <div class="container">
         <div class="col s12">
             <p class="flow-text center">Check the state of the player base for all of your favorite games.</p>
+            <h6 class="flow-text center">Current Top Games</h6>
         </div>
         <div class="col s12">
             <canvas id="gamesChart" idth="400" height="400"></canvas>
         </div>
     </div>
 
+    <footer class="footer orange accent-3">
+        <div>
+            <p id="date"></p>
+        </div>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.js" integrity="sha256-o8aByMEvaNTcBsw94EfRLbBrJBI+c3mjna/j4LrfyJ8=" crossorigin="anonymous"></script>
     <script>
         $(document).ready(function(){
+            //Get date for copyright at the bottom
+            date = new Date();
+            
+            $('#date').html(`&copy;
+                ${date.getFullYear()}
+            `)
+            
             $('.sidenav').sidenav();
 
             //Get Data from database and apply it to a new Chart
