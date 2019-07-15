@@ -17,6 +17,7 @@ let db = require('./models');
 
 //Routes
 require("./routes/api-routes.js")(app);
+require("./routes/html-routes.js")(app);
 
 //Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
